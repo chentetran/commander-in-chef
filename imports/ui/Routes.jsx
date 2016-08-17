@@ -8,7 +8,6 @@ import Recipe from './Recipe.jsx';
 export const renderRoutes = () => (
   <Router history={browserHistory}>
     <Route path="/" component={App}/>
-
     <Route path="recipe" component={Recipe}/>
   </Router>
 );
