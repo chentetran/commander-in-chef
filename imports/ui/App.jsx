@@ -18,17 +18,13 @@ class App extends Component {
 		if (this.props.recipes.length !== 0) {
 			return this.props.recipes.map((recipeObj, index) => {
 				return (
-					<li key={index} onClick={this.imageClicked.bind(this, recipeObj._id)}>
-						<Link to={'/recipe/' + recipeObj.info.name}>{recipeObj.info.name}</Link>
+					<li key={index}>
+						<Link to={'/recipe?dish=' + recipeObj.info.name}>{recipeObj.info.name}</Link>
 					</li>
 				);
 			});
 		}
 
-	}
-
-	imageClicked(id) {
-		console.log('clicked');
 	}
 	
 

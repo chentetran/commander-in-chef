@@ -6,9 +6,5 @@ import { renderRoutes } from '../imports/ui/Routes.jsx';
 import App from '../imports/ui/App.jsx';
 
 Meteor.startup(() => {
-
-
-
-
 	render(renderRoutes(), document.getElementById('render-target'));
 });
