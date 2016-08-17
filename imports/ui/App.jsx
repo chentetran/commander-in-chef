@@ -3,15 +3,23 @@ import { createContainer } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { Recipes } from '../api/recipes.js';
+import { Link } from 'react-router';
 
 class App extends Component {
+	constructor(props) {
+        super(props);
+
+        this.state = {
+            pickedRecipe: false,
+        };
+    }
 
 	renderImages() {
 		if (this.props.recipes.length !== 0) {
 			return this.props.recipes.map((recipeObj, index) => {
 				return (
 					<li key={index} onClick={this.imageClicked.bind(this, recipeObj._id)}>
-						<a href='#'>{recipeObj.info.name}</a>
+						<Link to={'/recipe/' + recipeObj.info.name}>{recipeObj.info.name}</Link>
 					</li>
 				);
 			});
