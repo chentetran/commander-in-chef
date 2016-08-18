@@ -15,7 +15,32 @@ export default class Recipe extends Component {
 	}
 }
 
+// For page title
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 class RecipeContent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentStep: 0,
+		};
+	}
+
+	componentDidUpdate() {
+		if (this.state.saidFirst) return;
+
+		let utterance = new SpeechSynthesisUtterance(this.props.dish[0].steps[0]);
+		let voices = window.speechSynthesis.getVoices();
+		// utterance.voice = voices[0]; // change voice
+		window.speechSynthesis.speak(utterance);
+
+		this.setState({
+			saidFirst: true
+		});
+	}
+
 	listSteps() {
 		if (this.props.dish.length === 0) return;
 		return this.props.dish[0].steps.map((stepStr, index) => (
@@ -23,16 +48,56 @@ class RecipeContent extends Component {
 		));
 	}
 
+	buttonClicked(key) {
+
+		let step = this.state.currentStep;	
+		switch (key) {
+			case 1: 	// Next
+				step++;
+				let lastIndex = this.props.dish[0].steps.length - 1;
+				if (step >= lastIndex) { // Check if outside arr bounds
+					step = lastIndex;
+				}
+
+				this.setState({
+					currentStep: step
+				});
+				break;
+
+			case 2: 	// Back
+				step--;
+				if (step < 0) {			// Check if outside arr bounds
+					step = 0;
+				}
+
+				this.setState({
+					currentStep: step
+				});
+				break;
+
+			case 3: 	// Repeat
+				
+		};
+		
+		let utterance = new SpeechSynthesisUtterance(this.props.dish[0].steps[step]);
+		window.speechSynthesis.speak(utterance);
+	}
+
 	render() {
 		return (
 			<div className='container'>
 				<header>
-					<h1>{this.props.dishName}</h1>
+					<h1>{capitalizeFirstLetter(this.props.dishName)}</h1>
 				</header>
 
-				<ul>
+				<ol>
 					{this.listSteps()}
-				</ul>
+				</ol>
+
+				<button type="button" onClick={this.buttonClicked.bind(this, 1)}>Next</button>
+				<button type="button" onClick={this.buttonClicked.bind(this, 2)}>Back</button>
+				<button type="button" onClick={this.buttonClicked.bind(this, 3)}>Repeat</button>
+
 			</div>
 		);
 	}
