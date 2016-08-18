@@ -6,29 +6,46 @@ import { Recipes } from '../api/recipes.js';
 
 // TODO: clean up query string to take out symbols to prevent nosql injection
 
+
 export default class Recipe extends Component {
 	render() {
-		console.log(this.state.dish);
+		return (
+			<Container dish={this.props.location.query.dish}/>
+		);
+	}
+}
+
+class RecipeContent extends Component {
+	listSteps() {
+		if (this.props.dish.length === 0) return;
+		return this.props.dish[0].steps.map((stepStr, index) => (
+			<li key={index}>{stepStr}</li>
+		));
+	}
+
+	render() {
 		return (
 			<div className='container'>
 				<header>
-					<h1>{this.props.location.query.dish}</h1>
+					<h1>{this.props.dishName}</h1>
 				</header>
 
-				<div>
-					
-				</div>
+				<ul>
+					{this.listSteps()}
+				</ul>
 			</div>
 		);
 	}
 }
 
-// Recipe.propTypes = {
-// 	dish: PropTypes.object.isRequired,
-// };
+RecipeContent.propTypes = {
+	dish: PropTypes.array.isRequired,
+	dishName: PropTypes.string.isRequired
+};
 
-// export default createContainer(() => {
-// 	return {
-// 		// dish: Recipes.find({'info.name':this.props.location.query.dish}).fetch(),
-// 	};
-// }, Recipe);
+let Container = createContainer((props) => {
+	return {
+		dish: Recipes.find({'info.name':props.dish}).fetch(),
+		dishName: props.dish
+	};
+}, RecipeContent);
