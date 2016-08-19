@@ -1,7 +1,15 @@
-# RecipeDictator (under construction)
+# RecipeDictator (under construction) 
 
-A better version of Recipio, using Meteorjs, Reactjs, CMUSphinx, the Web Speech API, and Wit.ai.
+You are the **Commander-in-Chef**. You feed families. You cure starvation. You import groceries from the supermarket and turn it into welfare for your people.
 
-Lots of work to do still.
+You have a tough job. Once you hear the rumbling of a hungry stomach, you must jump into action. You must know every ingredient, every tool, every step of every recipe, and you must cook to the best of your ability, all while maintaining a high approval rating.
 
-Recipe Dictator is a web app that will read steps from a recipe to you while you cook. You can speak to the app and ask questions or ask for the next step and it will respond.  
+But the only thing to fear is fear itself, for you have your [spice] cabinet to advise and assist you, including your loyal and trustworthy second-in-command, **Paprika**.
+
+Paprika is here to make your job easier. Focus on execution and leave logistics to Paprika. Give commands to Paprika and he'll fulfill his duty. Ask Paprika questions and he'll give you your intelligence briefing.
+
+Paprika is attentive, reliable, and responsive. All you have to do is speak loudly and carry a big spoon.
+
+So go ahead and ask what your kitchen can do for you. Paprika will know the answer.
+
+By the end of your term, you can proudly declare, "I am not a cook. I am a chef!"
