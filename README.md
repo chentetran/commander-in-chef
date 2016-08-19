@@ -1,4 +1,4 @@
-# RecipeDictator (under construction) 
+# Commander-in-Chef
 
 You are the **Commander-in-Chef**. You feed families. You cure starvation. You import groceries from the supermarket and turn it into welfare for your people.
 
