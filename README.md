@@ -17,3 +17,7 @@ By the end of your term, you can proudly declare, "I am not a cook. I am a chef!
 ---
 
 Commander-in-Chef is a voice activated cooking assistant app. Choose a recipe from the home page and start cooking. If you need any help while cooking or just want the next step of the recipe, simply say "Hey Paprika!", followed by your command.
+
+---
+
+*This is a continuation of the Recipio project, redone to include wit.ai and a better name*
