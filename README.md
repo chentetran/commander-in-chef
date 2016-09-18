@@ -21,3 +21,4 @@ Commander-in-Chef is a voice activated cooking assistant app. Choose a recipe fr
 ---
 
 *This is a continuation of the Recipio project, redone to include wit.ai and a better name*
+*Created with Meteor, React, Wit.ai, and web text-to-speech*
