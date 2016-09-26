@@ -12,8 +12,6 @@ Paprika is attentive, reliable, and responsive. All you have to do is speak loud
 
 So go ahead and ask what your kitchen can do for you. Paprika will know the answer.
 
-By the end of your term, you can proudly declare, "I am not a cook. I am a chef!"
-
 ---
 
 Commander-in-Chef is a voice activated cooking assistant app. Choose a recipe from the home page and start cooking. If you need any help while cooking or just want the next step of the recipe, simply say "Hey Paprika!", followed by your command.
